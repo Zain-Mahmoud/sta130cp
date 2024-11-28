@@ -150,14 +150,86 @@ The confidence interval we constructed only contained negative slopes between $-
 
 \section{Question 2}
 %ADD YOUR FRAMES BELOW
-\begin{frame}{Frame Title}
+\begin{frame}{Variables}
 
+Does video chatting with others make one feel less lonely than text messaging others?\\
+
+Independant Variables:\\
+
+Video chatted with friends/family in the past 3 months:\\
+
+Texted or messaged someone in the past 3 months:\\
+
+Options:
+\begin{itemize}
+    "Not in the past three months",
+    "Less than monthly",
+    "Monthly",
+    "A few times a month",
+    "Weekly",
+    "A few times a week",
+    "Daily or almost daily"
+\end{itemize}
+
+Dependant Variables:\\
+
+How many days felt lonely in the past week:\\
+
+Options:
+\begin{itemize}
+'None of the time (e.g., 0 days)': 0,
+    'Rarely (e.g. less than 1 day)': 0.5,
+    'Some or a little of the time (e.g. 1-2 days)' : 1.5,
+    'Occasionally or a moderate amount of time (e.g. 3-4 days)': 3.5,
+    'All of the time (e.g. 5-7 days)': 6
+\end{itemize}
 \end{frame}
 
+\begin{frame}{Assumptions}
+Converting the categorical variable to numerical values makes it not completely accurate since it assumes an exact number of days that they feel lonely\\
+
+
+How many days people feel lonely in a week is not reflective of how lonely they feel on average\\
+\end{frame}
+
+\begin{frame}{Visualization of the Raw Data}
+We first tried to analyse 2 factors separately with different OLS model, but the fitting of the model was poor (R square = 0.01) , and within the consideration of real life scenario: that people might choose between texting AND video calls, so we decide to analyse with a  multilinear regression model
+\end{frame}
+
+\begin{frame}{Final Result & Analysis}
+
+\includegraphics[width=0.5\linewidth]{presentation/Screenshot 2024-11-28 at 12.02.27 PM.png}
+
+The circled ones are the final value which got a p value lower than 0.05 (which means that the result is meaningful).\\
+
+Conclusions:\\
+Video chatting daily or almost daily without texting in the past three months leads to high levels of loneliness\\
+Video chatting daily or almost daily and texting weekly leads to low levels of loneliness\\
+Video chatting a few times a month and texting a few times a month also leads to low levels of loneliness\\
+
+*Reminder that this is not completely accurate due to assumptions mentioned previously\\
+\end{frame}
 
 \section{Question 3}
 %ADD YOUR FRAMES BELOW
 \begin{frame}{Frame Title}
+    
+\end{frame}
+
+\begin{frame}{Conclusion}
+
+Connections\\
+Aim to analyze how socializing in different forms affects people’s mental health\\
+branched off into 2 directions to find out the effect of  interaction when it's offline or online.\\
+
+Findings\\ 
+Socializing and Depression:\\
+The average depression score decreases when physical socialization >= 5 min/day\\
+Depression levels also drop when taking a walk with others.\\
+Playing video games, however, may have an opposing effect on level depression.\\
+Socializing and Loneliness:\\
+Contacting others a few times a month via video chat and test seems to reduce loneliness the most.\\
+
     
 \end{frame}
 
