@@ -230,11 +230,11 @@ I will perform a linear regression, with interactions. I will retain only the ou
 
 \section{Question 3}
 %ADD YOUR FRAMES BELOW
-\begin{frame}{Variables}
+\begin{frame}{Question 2 Variables}
 
 Does video chatting with others make one feel less lonely than text messaging others?\\
 
-Independant Variables:\\
+\textbf{Independant Variables:}\\
 
 Video chatted with friends/family in the past 3 months:\\
 
@@ -251,7 +251,7 @@ Options:
     "Daily or almost daily"
 \end{itemize}
 
-Dependant Variables:\\
+\textbf{Dependant Variables:}\\
 
 How many days felt lonely in the past week:\\
 
@@ -273,16 +273,36 @@ How many days people feel lonely in a week is not reflective of how lonely they 
 \end{frame}
 
 \begin{frame}{Visualization of the Raw Data}
-We first tried to analyse 2 factors separately with different OLS model, but the fitting of the model was poor (R square = 0.01) , and within the consideration of real life scenario: that people might choose between texting AND video calls, so we decide to analyse with a  multilinear regression model
+
+
+\includegraphics[width=0.5\linewidth]{presentation/Screenshot 2024-11-28 at 12.28.29 PM.png}
+\includegraphics[width=0.5\linewidth]{presentation/Screenshot 2024-11-28 at 12.31.04 PM.png}
+
+
+\end{frame}
+
+\begin{frame}{Simple Linear Regression & Data Wrangling}
+
+\includegraphics[width=0.5\linewidth]{presentation/Screenshot 2024-11-28 at 12.32.21 PM.png}
+
+We first tried to analyse the 2 factors separately with simple linear regression\\
+The fitting of the model was poor (R square = 0.01)\\
+So we decide to analyse with a  multilinear regression model\\
 \end{frame}
 
 \begin{frame}{Final Result & Analysis}
 
+
+Multilinear Regression with Heat Map Visualization.\\
 \includegraphics[width=0.5\linewidth]{image4.png}
 
-The circled ones are the final value which got a p value lower than 0.05 (which means that the result is meaningful).\\
 
-Conclusions:\\
+The circled ones are the final value which got a p value lower than 0.05 (meaningful).\\
+The r-squared is 0.065 for the multilinear regression\\
+\end{frame}
+
+\begin{frame}
+\textbf{Conclusions:}\\
 Video chatting daily or almost daily without texting in the past three months leads to high levels of loneliness\\
 Video chatting daily or almost daily and texting weekly leads to low levels of loneliness\\
 Video chatting a few times a month and texting a few times a month also leads to low levels of loneliness\\
@@ -298,19 +318,24 @@ Video chatting a few times a month and texting a few times a month also leads to
 
 \begin{frame}{Conclusion}
 
-Connections\\
+\textbf{Connections}\\
 Aim to analyze how socializing in different forms affects people’s mental health\\
 branched off into 2 directions to find out the effect of  interaction when it's offline or online.\\
 
-Findings\\ 
+\textbf{Findings}\\ 
 Socializing and Depression:\\
-The average depression score decreases when physical socialization >= 5 min/day\\
+The average depression score decreases when physical socialization $>=$ 5 min/day\\
 Depression levels also drop when taking a walk with others.\\
 Playing video games, however, may have an opposing effect on level depression.\\
 Socializing and Loneliness:\\
 Contacting others a few times a month via video chat and test seems to reduce loneliness the most.\\
 
     
+\end{frame}
+
+\begin{frame}{Future Directions & Acknowledgments}
+\textbf{Acknowledgments:}\\
+We would like to thank Dr. Kiffer Card and Ms. Christine Ovcaric for providing this valuable opportunity. Special thanks to Prof. Schott, our TA, and all the teaching assistants for their guidance and support throughout the project.
 \end{frame}
 
 \end{document}
