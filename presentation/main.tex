@@ -57,7 +57,7 @@ Is there an association between playing video games and feeling depressed, and c
 \end{block}
 
 \begin{block}{Question 3}
-    How does the association between loneliness and video chatting compare to text chatting?
+    How does the association between loneliness and video chatting compare to text messaging?
 \end{block}
 \end{frame}
 \section{Question 1}
@@ -245,84 +245,117 @@ I will perform a linear regression, with interactions. I will retain only the ou
 
 \section{Question 3}
 %ADD YOUR FRAMES BELOW
-\begin{frame}{Question 2 Variables}
+\begin{frame}{Question 3 Variables}
 
-Does video chatting with others make one feel less lonely than text messaging others?\\
+\small % Makes the text smaller
+How does the association between loneliness and video chatting compare
+to text messaging?\\
 
-\textbf{Independant Variables:}\\
-
+\vspace{0.5em} % Adds space between lines
+\textbf{Independent Variables:}\\
+\vspace{0.2em}
 Video chatted with friends/family in the past 3 months:\\
+Texted or messaged someone in the past 3 months to check in:\\
 
-Texted or messaged someone in the past 3 months:\\
-
-Options:
+\vspace{0.5em}
+7 Options:
 \begin{itemize}
-    "Not in the past three months",
-    "Less than monthly",
-    "Monthly",
-    "A few times a month",
-    "Weekly",
-    "A few times a week",
-    "Daily or almost daily"
+    "Not in the past three months" ...
+    "Daily or almost daily",
 \end{itemize}
 
-\textbf{Dependant Variables:}\\
-
+\vspace{0.5em}
+\textbf{Dependent Variables:}\\
+\vspace{0.2em}
 How many days felt lonely in the past week:\\
 
-Options:
+\vspace{0.5em}
+5 Options:
 \begin{itemize}
-'None of the time (e.g., 0 days)': 0,
-    'Rarely (e.g. less than 1 day)': 0.5,
-    'Some or a little of the time (e.g. 1-2 days)' : 1.5,
-    'Occasionally or a moderate amount of time (e.g. 3-4 days)': 3.5,
-    'All of the time (e.g. 5-7 days)': 6
+    'None of the time (e.g., 0 days)': 0 ... 'All of the time (e.g. 5-7 days)': 6
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\includegraphics[width=\linewidth]{Screenshot 2024-12-01 at 12.16.24 PM.png}
+We combined the independent variables into categories of two options to reduce the number of options from 7 to 4\\
+More narrowed down results\\
+\vspace{1em}
+\small We selected "Few times a month or weekly" as the baseline (since it is a moderate level of frequency)
 \end{frame}
 
 \begin{frame}{Assumptions}
-Converting the categorical variable to numerical values makes it not completely accurate since it assumes an exact number of days that they feel lonely\\
-
-
-How many days people feel lonely in a week is not reflective of how lonely they feel on average\\
+\begin{itemize}
+    \item Converting the categorical variable to numerical values makes it not completely accurate since it assumes an exact number of days that they feel lonely (it is not a continuous variable but it being treated as one)\\
+    \item How many days people feel lonely in a week is not reflective of how lonely they feel on average\\
+    \item Converting independent variables into 4 categories of options instead of 7 is not reflective of how the surveyors actually responded to the question and narrows down the frequency of their activities
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Visualization of the Raw Data}
 
-
-\includegraphics[width=0.5\linewidth]{Screenshot 2024-11-28 at 12.28.29 PM.png}
-\includegraphics[width=0.5\linewidth]{Screenshot 2024-11-28 at 12.31.04 PM.png}
-
+\begin{minipage}[t]{0.51\linewidth} % Reduced width
+    \includegraphics[width=\linewidth]{Screenshot 2024-11-28 at 12.28.29 PM.png}
+    \caption{Graph 1 - Text/Messaged} % Optional caption
+\end{minipage}%
+\hspace{-1em} % Reduces space between the minipages
+\begin{minipage}[t]{0.51\linewidth} % Same width as the first minipage
+    \includegraphics[width=\linewidth]{Screenshot 2024-11-28 at 12.31.04 PM.png}
+    \caption{Graph 2 - Video Chatting} % Optional caption
+\end{minipage}
 
 \end{frame}
 
-\begin{frame}{Simple Linear Regression & Data Wrangling}
 
-\includegraphics[width=0.5\linewidth]{Screenshot 2024-11-28 at 12.32.21 PM.png}
+\begin{frame}{ Simple Linear Regression \& Data Wrangling} % Tiny text in title too
 
-We first tried to analyse the 2 factors separately with simple linear regression\\
-The fitting of the model was poor (R square = 0.01)\\
-So we decide to analyse with a  multilinear regression model\\
+\small % Reduces text size for the entire frame
+We first tried to analyze the two factors separately with simple linear regression.\\
+
+\vspace{0.5em} % Adds space before the images
+
+\begin{minipage}[t]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Screenshot 2024-12-01 at 12.01.04 PM.png}\\
+    Loneliness vs. Video Chatting Frequency
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Screenshot 2024-12-01 at 12.01.09 PM.png}\\
+    Loneliness vs. Text Messaging Frequency
+\end{minipage}
+
+\vspace{0.5em} % Adds space after the images
+
+The fitting of the model was poor, so we decided to analyze with a multilinear regression model with interactions.\\
+
 \end{frame}
 
-\begin{frame}{Final Result & Analysis}
 
+\begin{frame}{Final Result \& Analysis}
 
-Multilinear Regression with Heat Map Visualization.\\
-\includegraphics[width=0.5\linewidth]{image4.png}
+\begin{minipage}[t]{0.6\linewidth} % Adjust width for the image
+    \includegraphics[width=\linewidth]{Screenshot 2024-12-01 at 1.08.25 PM.png}
+\end{minipage}%
+R-squared value = 0.32\\
+The condition number = 26.4\\
+Residual analysis suggests minimal bias\\
 
-
-The circled ones are the final value which got a p value lower than 0.05 (meaningful).\\
-The r-squared is 0.065 for the multilinear regression\\
 \end{frame}
 
 \begin{frame}
 \textbf{Conclusions:}\\
-Video chatting daily or almost daily without texting in the past three months leads to high levels of loneliness\\
-Video chatting daily or almost daily and texting weekly leads to low levels of loneliness\\
-Video chatting a few times a month and texting a few times a month also leads to low levels of loneliness\\
+\begin{itemize}
+    \item  Treating texting and video chatting a few times a month or weekly as the baseline
+    \item Comparing that intercept to no video chat in the past 3 months
+    \item Final Result - Not video chatting in the past 3 months increases the days one feels lonely from 1.67 (when texting and video chatting a few times a month or weekly) to 2.24 days\\
+    \item So, video chatting could be beneficial to reducing loneliness 
+\end{itemize}
 
 *Reminder that this is not completely accurate due to assumptions mentioned previously\\
+*Reminder that correlation $\neq$ causation
 \end{frame}
 
 \section{Question 3}
@@ -331,22 +364,28 @@ Video chatting a few times a month and texting a few times a month also leads to
 \begin{frame}{Conclusion}
 
 \textbf{Connections}\\
-Aim to analyze how socializing in different forms affects people’s mental health\\
-branched off into 2 directions to find out the effect of  interaction when it's offline or online.\\
+\begin{itemize}
+    \item Aim to analyze how people’s mental health is associated with different socializing forms
+\end{itemize}
 
 \textbf{Findings}\\ 
-Socializing and Depression:\\
-The average depression score decreases when physical socialization $>=$ 5 min/day\\
-Depression levels also drop when taking a walk with others.\\
-Playing video games, however, may have an opposing effect on level depression.\\
-Socializing and Loneliness:\\
-Contacting others a few times a month via video chat and test seems to reduce loneliness the most.\\
-
+\begin{itemize}
+    \item Socializing and Depression:
+    \begin{itemize}
+        \item The average depression score decreases when physical socialization $\geq $ 5 min/day
+        \item Depression levels also drop when taking a walk with others.
+        \item Playing video games, however, may have an opposing effect on depression levels.
+    \end{itemize}
+    \item Socializing and Loneliness:
+    \begin{itemize}
+        \item Not video chatting in the past 3 months increases the days one feels lonely
+    \end{itemize}
+\end{itemize}
     
 \end{frame}
 
-\begin{frame}{Future Directions & Acknowledgments}
-\textbf{Acknowledgments:}\\
+\begin{frame}{Acknowledgments}
+
 We would like to thank Dr. Kiffer Card and Ms. Christine Ovcaric for providing this valuable opportunity. Special thanks to Prof. Scott, our TA, and all the teaching assistants for their guidance and support throughout the project.
 \end{frame}
 
