@@ -169,12 +169,15 @@ The confidence interval we constructed only contained negative slopes between $-
     \vspace{1em}
     
     {\small{\tt CONNECTION\_activities\_onlinegames\_p3m}:\\
-    how often an individual has played online games in the past 3 months}
+    how often an individual has played online games in the past 3 months}\\
+    {\tiny \textbf{Ordinal categorical outcomes:} Not in the past three months, Less than monthly, Monthly, A few times a month, Weekly, A few times a week, Daily or almost daily}
+
     
     \vspace{0.5em}
     
     {\small{\tt CONNECTION\_activities\_walk\_p3m}:\\
-    how often an individual has gone on a walk with friends in the past 3 months}
+    how often an individual has gone on a walk with friends in the past 3 months}\\
+    {\tiny \textbf{Ordinal categorical outcomes:} Not in the past three months, Less than monthly, Monthly, A few times a month, Weekly, A few times a week, Daily or almost daily}
     
     \vspace{1.5em}
     
@@ -184,8 +187,26 @@ The confidence interval we constructed only contained negative slopes between $-
     
     {\small{\tt WELLNESS\_malach\_pines\_burnout\_measure\_depressed}:\\
     how often an individual feels depressed}
+    {\tiny \textbf{Ordinal categorical outcomes:} Never, Almost never, Rarely, Sometimes, Very Often, Always}
     
     
+\end{frame}
+
+\begin{frame}
+    \frametitle{Limitations and assumptions}
+
+    It is not possible to perfectly map the ordinal categories for how often an individual feels depressed {\tiny Never, Almost never, Rarely, Sometimes, Very Often, Always} numerically.
+
+    It shouldn't be assumed that the "distance" between each category is "1", but I will map it to the numbers 0 through 5 for multiple linear regression.
+
+    \vspace{1em}
+
+    It is not possible to measure level of depression in a binary variable, if I wanted to do something like a logistic regression.
+
+    \vspace{1em}
+
+    I will keep the outcomes as a continuous variable (intended to be interpreted from a 0 through 5 scale), rather than converting it back to categorical.
+
 \end{frame}
 
 
@@ -203,17 +224,32 @@ The confidence interval we constructed only contained negative slopes between $-
 
     After renaming variables, removing empty values, etc., this is what my DataFrame looks like.
 
-    {\tiny The boolean values True are whenever the categorical values are not never/not in the past three months.}
-
     \begin{figure}
         \centering
-        \includegraphics[width=0.7\linewidth]{jason_dfpreview.png}
+        \includegraphics[width=0.5\linewidth]{jason_dfpreview.png}
     \end{figure}
     
 \end{frame}
 
+
+\begin{frame}
+
+    \frametitle{Multiple Linear Regression}
+    
+    The table below retains only the significant (p-value $\leq 0.05$) outcomes (rest are omitted) from a multiple linear regression.
+    I will create a new column that will show the predicted $\hat y$ values, and plot this on a bar plot.
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.3\linewidth]{jason_regression.png}
+        \includegraphics[width=0.8\linewidth]{jason_regressionoutcome.png}
+    \end{figure}
+    
+    \end{frame}
+
 \begin{frame}
     \frametitle{Bar plot}
+
+    {\tiny Sorted in descending order, with intercept first.}
 
     \begin{figure}
         \centering
@@ -224,19 +260,21 @@ The confidence interval we constructed only contained negative slopes between $-
 
 
 \begin{frame}
+    \frametitle{Findings}
 
-\frametitle{Regression}
+    Recall that the values on the bar chart is how level of depression changes as the variables in the x-axis changes.
 
-I will perform a linear regression, with interactions. I will retain only the outcomes with a p-value $\geq 0.05$ for simplicity.
+    We find that the intercept (no online games, no going on walks with friends) is 2.5 on this 0-5 scale. It is interesting that the intercept is at the halfway point.
+    
+    We find that even just playing online games a few times a month can increase one's level of depression a lot.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\linewidth]{jason_regression.png}
-    \includegraphics[width=0.6\linewidth]{jason_regressionoutcome.png}
-\end{figure}
+    As an individual's frequency on walks with friends increases, their level of depression decreases.
+
+    This change is apparant in playing and not playing online games.
+
+    In conclusion, we find that only playing online games will correlates positively with one's level of depression, while going on walks with friends will significantly lower that.
 
 \end{frame}
-
 
 
 
