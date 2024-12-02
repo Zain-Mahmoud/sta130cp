@@ -37,7 +37,7 @@ Professor Scott Schwartz}
 
 \begin{frame}
 \frametitle{Introduction}
-Social interactions play a pivotal role in shaping individual mental health outcomes. It is becoming increasingly easier, especially for teenagers, to connect with their friends virtually from the comfort of their homes. One may argue that this is harmful for their mental health; is this always the case?\\
+Social interactions play a pivotal role in shaping individual mental health outcomes. It is becoming increasingly easier, especially for teenagers, to connect with their friends virtually from the comfort of their homes. One may argue that this is harmful for their mental health; but is this always the case?\\
 Through this research, we aim to highlight the difference between physically interacting with community members as opposed to virtually connecting with them. We used the \alert{Canadian Social Connections Survey (CSCS)} to investigate the relationship between various forms of social interactions (physical and non-physical) and how they affect the individuals' mental health states. 
 This presentation outlines the variables we're using, our hypotheses, analyses, key findings, and the conclusions we've drawn from these findings.
 \end{frame}
@@ -122,12 +122,6 @@ of 0-6.}
     \end{columns}
 \end{frame}
 
-\begin{frame}{Limitations and assumptions}
-
-    For this analysis, we only considered days where individuals spent at least 5 minutes socializing. However, this threshold is vague and is not specific enough. One could spend 5 minutes socializing and another could spend 5 hours socializing yet they would still be considered under the same category. I also made some assumptions to convert the categorical values into numeric values. However, given that the mapping of involved the midpoint of each interval, I believe this conversion was suitable.
-    
-\end{frame}
-
 \begin{frame}{Analysis}
     We then created a bootstrapped distribution of model slope coefficients by repeatedly resampling from our original sample and refitting OLS models through the samples. Then, we created a 95\% confidence interval of our bootstrapped coefficients for inference.
     \begin{figure}
@@ -143,10 +137,11 @@ The confidence interval we constructed only contained negative slopes between $-
     
 \end{frame}
 
+\begin{frame}{Limitations and assumptions}
 
-
-
-
+    For this analysis, we only considered days where individuals spent at least 5 minutes socializing. However, this threshold is vague and is not specific enough. One person could spend 5 minutes socializing and another could spend 5 hours socializing yet they would still be considered under the same category. I also made some assumptions to convert the categorical values into numeric values. However, given that the mapping of categories involved the midpoint of each interval, I believe this conversion was appropriate.
+    
+\end{frame}
 
 % Jason
 
@@ -231,7 +226,6 @@ The confidence interval we constructed only contained negative slopes between $-
     I will create a new column that will show the predicted $\hat y$ values, and plot this on a bar plot.
     \begin{figure}
         \centering
-        \includegraphics[width=0.3\linewidth]{jason_regression.png}
         \includegraphics[width=0.8\linewidth]{jason_regressionoutcome.png}
     \end{figure}
     
@@ -253,17 +247,17 @@ The confidence interval we constructed only contained negative slopes between $-
 \begin{frame}
     \frametitle{Findings}
 
-    Recall that the values on the bar chart is how level of depression changes as the variables in the x-axis changes.
+    Recall that the values on the bar chart is how level of depression changes as the variables in the x-axis change.
 
-    We find that the intercept (no online games, no going on walks with friends) is 2.5 on this 0-5 scale. It is interesting that the intercept is at the halfway point.
+    We find that the intercept (don't play online games and don't go on walks with friends) is 2.5 on this 0-5 scale. It is interesting that the intercept is at the halfway point.
     
-    We find that even just playing online games a few times a month can increase one's level of depression a lot.
+    We find that even just playing online games a few times a month can significantly increase one's level.
 
-    As an individual's frequency on walks with friends increases, their level of depression decreases.
+    As an individual's frequency of walks with friends increases, their level of depression decreases.
 
-    This change is apparant in playing and not playing online games.
+    This change is apparent in both individuals who play games and individuals who don't.
 
-    In conclusion, we find that only playing online games will correlates positively with one's level of depression, while going on walks with friends will significantly lower that.
+    In conclusion, we find that only playing online games correlates positively with one's level of depression, while going on walks with friends significantly lowers that.
 
 \end{frame}
 
@@ -412,5 +406,6 @@ Residual analysis suggests minimal bias\\
 \end{itemize}
     
 \end{frame}
+
 
 \end{document}
